@@ -1,0 +1,70 @@
+[
+  {
+    "intent": "pembuatan_ktp",
+    "queries": [
+      "gimana cara bikin ktp baru",
+      "syarat urus e-ktp apa aja",
+      "saya mau buat kartu tanda penduduk",
+      "prosedur cetak ktp yang hilang",
+      "ktp rusak harus bawa apa ke kelurahan",
+      "cara mengajukan permohonan ktp"
+    ],
+    "response": "📋 Prosedur Pembuatan/Pembaruan e-KTP:\n1. Berusia minimal 17 tahun.\n2. Bawa Fotokopi Kartu Keluarga (KK).\n3. Surat pengantar RT/RW (jika baru pindah).\n4. Datang ke Kantor Camat/Dukcapil untuk perekaman foto & sidik jari.\n⚠️ Layanan ini GRATIS tidak dipungut biaya."
+  },
+  {
+    "intent": "pembuatan_kk",
+    "queries": [
+      "cara mengurus kartu keluarga baru",
+      "mau tambah anggota keluarga di kk",
+      "syarat bikin kk buat yang baru nikah",
+      "cetak ulang kartu keluarga dimana",
+      "memperbarui data kk yang salah",
+      "ganti kepala keluarga di kk"
+    ],
+    "response": "📋 Prosedur Layanan Kartu Keluarga (KK):\n1. Siapkan Surat Pengantar RT/RW.\n2. Bawa KK lama (untuk penambahan/pengurangan anggota) atau Buku Nikah (untuk keluarga baru).\n3. Mengisi formulir F-1.01 di Kantor Kelurahan.\n⚠️ Proses pencetakan memerlukan waktu 1-3 hari kerja tanpa biaya."
+  },
+  {
+    "intent": "akta_kelahiran",
+    "queries": [
+      "syarat bikin akta kelahiran anak",
+      "cara urus surat kenal lahir bayi",
+      "daftarin akte kelahiran anak dimana",
+      "akte kelahiran hilang urusnya gimana",
+      "persyaratan membuat akta lahir baru"
+    ],
+    "response": "📋 Prosedur Pembuatan Akta Kelahiran:\n1. Surat Keterangan Kelahiran dari Rumah Sakit/Bidan.\n2. Fotokopi Buku Nikah/Akta Perkawinan orang tua.\n3. Fotokopi KTP kedua orang tua dan 2 orang saksi.\n4. Fotokopi Kartu Keluarga (KK) tempat anak akan didaftarkan."
+  },
+  {
+    "intent": "kartu_identitas_anak",
+    "queries": [
+      "cara buat kia anak kecil",
+      "syarat kartu identitas anak",
+      "bikin kia umur berapa aja",
+      "mengurus ktp anak dibawah 17 tahun",
+      "prosedur kartu anak di dukcapil"
+    ],
+    "response": "📋 Prosedur Pembuatan Kartu Identitas Anak (KIA):\n1. Untuk anak usia 0-5 tahun: Cukup input data akta kelahiran, KIA akan dicetak bersamaan.\n2. Untuk anak usia 5-17 tahun (kurang 1 hari): Bawa Fotokopi Akta Kelahiran, KK orang tua, KTP asli kedua orang tua, dan Pasfoto anak ukuran 2x3 (2 lembar)."
+  },
+  {
+    "intent": "pindah_domisili",
+    "queries": [
+      "syarat urus surat pindah keluar daerah",
+      "cara urus domisili baru",
+      "mau pindah kk ke kota lain",
+      "prosedur cabut berkas kependudukan",
+      "surat keterangan pindah datang bawa apa"
+    ],
+    "response": "📋 Prosedur Pengurusan Pindah Domisili (SKPWNI):\n1. Bawa Kartu Keluarga (KK) asli.\n2. Mengisi formulir permohonan pindah di Kelurahan/Kecamatan.\n3. SKPWNI akan diterbitkan oleh Dinas Dukcapil asal untuk dibawa ke daerah tujuan.\n⚠️ Saat ini pengurusan bisa dilakukan secara online melalui aplikasi layanan kependudukan daerah setempat."
+  },
+  {
+    "intent": "salam_bantuan",
+    "queries": [
+      "halo selamat siang admin",
+      "pagi min mau nanya",
+      "bisa bantu saya ga",
+      "hai bot pemda",
+      "permisi mau konsultasi"
+    ],
+    "response": "👋 Halo! Selamat datang di Chatbot Layanan Publik Pemerintah Daerah. Saya siap membantu Anda memberikan informasi mengenai prosedur pengurusan dokumen kependudukan seperti KTP, Kartu Keluarga (KK), Akta Kelahiran, KIA, dan Surat Pindah Domisili. Apa yang bisa saya bantu hari ini?"
+  }
+]
