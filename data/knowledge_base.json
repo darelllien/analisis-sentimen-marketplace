@@ -7,7 +7,9 @@
       "saya mau buat kartu tanda penduduk",
       "prosedur cetak ktp yang hilang",
       "ktp rusak harus bawa apa ke kelurahan",
-      "cara mengajukan permohonan ktp"
+      "cara mengajukan permohonan ktp",
+      "kehilangan kartu identitas penduduk saya",
+      "ganti kartu identitas kependudukan rusak"
     ],
     "response": "📋 Prosedur Pembuatan/Pembaruan e-KTP:\n1. Berusia minimal 17 tahun.\n2. Bawa Fotokopi Kartu Keluarga (KK).\n3. Surat pengantar RT/RW (jika baru pindah).\n4. Datang ke Kantor Camat/Dukcapil untuk perekaman foto & sidik jari.\n⚠️ Layanan ini GRATIS tidak dipungut biaya."
   },
@@ -30,7 +32,8 @@
       "cara urus surat kenal lahir bayi",
       "daftarin akte kelahiran anak dimana",
       "akte kelahiran hilang urusnya gimana",
-      "persyaratan membuat akta lahir baru"
+      "persyaratan membuat akta lahir baru",
+      "gimana cara bikin surat lahir anak bayi"
     ],
     "response": "📋 Prosedur Pembuatan Akta Kelahiran:\n1. Surat Keterangan Kelahiran dari Rumah Sakit/Bidan.\n2. Fotokopi Buku Nikah/Akta Perkawinan orang tua.\n3. Fotokopi KTP kedua orang tua dan 2 orang saksi.\n4. Fotokopi Kartu Keluarga (KK) tempat anak akan didaftarkan."
   },
@@ -41,7 +44,8 @@
       "syarat kartu identitas anak",
       "bikin kia umur berapa aja",
       "mengurus ktp anak dibawah 17 tahun",
-      "prosedur kartu anak di dukcapil"
+      "prosedur kartu anak di dukcapil",
+      "buat identitas anak balita"
     ],
     "response": "📋 Prosedur Pembuatan Kartu Identitas Anak (KIA):\n1. Untuk anak usia 0-5 tahun: Cukup input data akta kelahiran, KIA akan dicetak bersamaan.\n2. Untuk anak usia 5-17 tahun (kurang 1 hari): Bawa Fotokopi Akta Kelahiran, KK orang tua, KTP asli kedua orang tua, dan Pasfoto anak ukuran 2x3 (2 lembar)."
   },

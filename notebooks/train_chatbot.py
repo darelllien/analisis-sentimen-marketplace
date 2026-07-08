@@ -4,11 +4,10 @@ import pickle
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-print("🤖 Memulai Pipeline Dense Semantic Chatbot Pemda AI03")
+print("🤖 Memulai Pipeline Dense Semantic Chatbot Pemda AI03 (Optimized)")
 
-#1. Loading Dataset Knowledge Base (Clean & Label Tanpa Leakage)
+# 1. Loading Dataset
 dataset_path = os.path.join("..", "data", "knowledge_base.json")
 if not os.path.exists(dataset_path):
     dataset_path = os.path.join("data", "knowledge_base.json")
@@ -17,17 +16,11 @@ print(f"[*] Membaca dataset dari: {dataset_path}")
 with open(dataset_path, "r", encoding="utf-8") as f:
     knowledge_base = json.load(f)
 
-#2. Inisialisasi NLP Preprocessing (Teknik AI 1: Sastrawi Stemmer)
-print("[*] Menginisialisasi Sastrawi Stemmer untuk normalisasi teks...")
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()
-
+# 2. Pembersihan Teks Ringan (Tanpa Stemmer agar keyword kependudukan tidak rusak)
 def preprocess_text(text):
-    """Melakukan case folding dan stemming teks."""
-    text = str(text).lower()
-    return stemmer.stem(text)
+    return str(text).lower().strip()
 
-#3. Meratakan Data (Flattening Queries) & Preprocessing
+# 3. Flattening Data
 print("[*] Memproses dan mengekstraksi frasa pelatihan...")
 training_data = []
 intent_mapping = []
@@ -40,14 +33,14 @@ for item in knowledge_base:
 
 print(f"    -> Berhasil mengekstrak {len(training_data)} sampel frasa pertanyaan.")
 
-#4. Membangun Representasi Padat (Dense Representation via TF-IDF Vector Spaces)
+# 4. Feature Extraction (Fokus pada Karakter dan Kata Pendek)
 print("[*] Mengekstrak fitur Dense Semantics menggunakan TfidfVectorizer...")
-vectorizer = TfidfVectorizer(ngram_range=(1, 2))
-dense_embeddings = vectorizer.fit_transform(training_data).toarray() 
+vectorizer = TfidfVectorizer(ngram_range=(1, 2), analyzer='word')
+dense_embeddings = vectorizer.fit_transform(training_data).toarray()
 
 print(f"    -> Dimensi matriks dense representation: {dense_embeddings.shape}")
 
-#5. Menyimpan Komponen Model (Pickle Exporter) untuk Streamlit Cloud Deployment
+# 5. Exporting Binary Assets (.pkl)
 models_dir = "../models" if os.path.exists("../models") else "models"
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -57,6 +50,7 @@ embeddings_path = os.path.join(models_dir, "dense_embeddings.pkl")
 mapping_path = os.path.join(models_dir, "intent_mapping.pkl")
 
 print(f"[*] Mengekspor aset model biner (.pkl) ke folder '{models_dir}/'...")
+
 with open(vectorizer_path, "wb") as f:
     pickle.dump(vectorizer, f)
 
@@ -66,20 +60,16 @@ with open(embeddings_path, "wb") as f:
 with open(mapping_path, "wb") as f:
     pickle.dump(intent_mapping, f)
 
-# 6. Simulasi Pengujian Integritas Model (Validasi Internal)
+# 6. Simulasi Pengujian Integritas Model
 print("\n🧪 Menjalankan Simulasi Pengujian Integritas Model")
 
 def simulate_inference(user_input):
-    """Simulasi fungsi inferensi semantik chatbot yang sesungguhnya."""
-
     clean_input = preprocess_text(user_input)
     input_vector = vectorizer.transform([clean_input]).toarray()
     
-    #Teknik AI 2: Perhitungan Kedekatan Semantik via Cosine Similarity
     similarities = cosine_similarity(input_vector, dense_embeddings)[0]
     best_match_idx = np.argmax(similarities)
     confidence_score = similarities[best_match_idx]
-    
     predicted_intent = intent_mapping[best_match_idx]
     
     return predicted_intent, confidence_score
